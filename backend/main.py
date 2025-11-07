@@ -73,7 +73,7 @@ async def process_pdf_document(file_path: str, filename: str) -> dict:
     try:
         # Configure options
         opt = config(
-            model='gpt-4o-2024-11-20',
+            model='gpt-4-turbo-preview',
             toc_check_page_num=20,
             max_page_num_each_node=10,
             max_token_num_each_node=20000,
@@ -110,7 +110,7 @@ async def process_markdown_document(file_path: str, filename: str) -> dict:
         config_loader = ConfigLoader()
 
         user_opt = {
-            'model': 'gpt-4o-2024-11-20',
+            'model': 'gpt-4-turbo-preview',
             'if_add_node_summary': 'yes',
             'if_add_doc_description': 'yes',
             'if_add_node_text': 'no',
@@ -190,7 +190,7 @@ def search_relevant_nodes(tree: dict, query: str, top_k: int = 5) -> List[str]:
 
         # Use LLM to reason about which parts are relevant
         response = client.chat.completions.create(
-            model="gpt-4o-2024-11-20",
+            model="gpt-4-turbo-preview",
             messages=[
                 {
                     "role": "system",
@@ -320,7 +320,7 @@ async def ask_question(request: QuestionRequest):
 
         # Generate answer using LLM
         response = client.chat.completions.create(
-            model="gpt-4o-2024-11-20",
+            model="gpt-4-turbo-preview",
             messages=[
                 {
                     "role": "system",

@@ -28,7 +28,7 @@ A full-stack RAG (Retrieval Augmented Generation) application that allows users 
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/mark-allwyn/pageindex-RAG.git
 cd pageindex-RAG
 ```
 
